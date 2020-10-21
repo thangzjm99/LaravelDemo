@@ -48,7 +48,7 @@ class LoaiTinController extends Controller
     {
         $theloai=TheLoai::all();
         $loaitin = LoaiTin::find($id);
-        return view('admin.loaitin.sua',['loaitin'=>$loaitin],['theloai'=>$theloai]);
+        return view('admin.loaitin.sua',['loaitin'=>$loaitin,'theloai'=>$theloai]);
         
     }
     public function postSua(Request $request,$id)
@@ -72,7 +72,7 @@ class LoaiTinController extends Controller
         $loaitin->idTheLoai=$request->TheLoai;
         $loaitin->save();
         return redirect('admin/loaitin/sua/'.$id)->with('thongbao','Bạn đã sửa thành công');
-
+ 
     }
     public function getXoa($id)
     {
